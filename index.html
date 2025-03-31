@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ΑΙΤΗΣΗ ΑΔΕΙΑΣ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .date {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .approve {
+            background-color: green;
+            color: white;
+        }
+
+        .reject {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">ΑΙΤΗΣΗ ΑΔΕΙΑΣ: ΓΙΑΤΡΑΚΗΣ ΕΜΜΑΝΟΥΛ</div>
+    <div class="date">31/3/2025 - 25/4/2025</div>
+
+    <div class="buttons">
+        <button class="approve">ΕΓΚΡΙΣΗ</button>
+        <button class="reject" id="rejectButton">ΑΠΟΡΡΙΨΗ</button>
+    </div>
+
+    <script>
+        const rejectButton = document.getElementById('rejectButton');
+
+        rejectButton.addEventListener('mouseenter', () => {
+            // Move the button randomly when the mouse enters
+            const x = Math.random() * (window.innerWidth - rejectButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - rejectButton.offsetHeight);
+            rejectButton.style.position = 'absolute';
+            rejectButton.style.left = `${x}px`;
+            rejectButton.style.top = `${y}px`;
+        });
+    </script>
+
+</body>
+</html>
